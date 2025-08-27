@@ -1,0 +1,521 @@
+
+body {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px; 
+
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #131111;
+  text-align: center;
+  margin-top: 120px;
+}
+
+ 
+.navbar {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column; /* Stack image and navbar links vertically */
+  align-items: center; /* Center image and tabs */
+  justify-content: center; /* Center content vertically */
+  /*  */ /* Adjusted for the image height */
+}
+
+/* Logo inside the navbar */
+.nav-logo {
+  height: 80px; /* Increased height of the logo */
+  width: auto;
+  margin-bottom: 10px; /* Space between the image and the nav tabs */
+}
+
+/* Navigation List */
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navbar ul li {
+  display: inline-block;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  transform: scale(1.1);
+}
+
+.nav-right {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0; /* No gap between tabs */
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+/* Remove ALL spacing for list items */
+.nav-right li {
+  margin: 0;
+  padding: 0;
+  line-height: 0; /* Fix spacing caused by inline-block */
+}
+
+/* Remove ALL spacing for anchor tags */
+.nav-right li a {
+  display: block; /* Change to block to avoid inline spacing */
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove padding from the icon container */
+.tab-icon {
+  font-size: 1.5rem;
+  color: white;
+  padding: 0 !important; /* Force no padding */
+  margin: 0 !important; /* Force no margin */
+}
+
+/* Optional: Overlap tabs slightly with negative margin */
+.nav-right li {
+  margin-right: -4px; /* Adjust this value if needed */
+}
+.tab-text {
+  display: none; /* Hide the text by default */
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Show text when hovering over the icon */
+.nav-right li:hover .tab-text {
+  display: block; /* Show the text when hovering */
+}
+
+/* Hover effect */
+.nav-right li a:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Adjust "Help" tab's position further away from the right edge */
+.nav-right li:last-child {
+  margin-right: 30px; /* Push "Help" tab slightly further from the right edge */
+}
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  z-index: 1001;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* Update sidebar styles */
+.sidebar {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    min-width: 280px;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(15px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar.active {
+    left: 0;
+    transform: translateX(0);
+  }
+  
+  .sidebar-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Separate main and right tabs visually */
+  .sidebar-main-tabs,
+  .sidebar-right-tabs {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin: 10px 0;
+  }
+  
+  .sidebar-main-tabs li,
+  .sidebar-right-tabs li {
+    margin: 8px 0;
+  }
+  
+  .sidebar-main-tabs li a,
+  .sidebar-right-tabs li a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 15px;
+    display: block;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .sidebar-main-tabs li a:hover,
+  .sidebar-right-tabs li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(10px);
+  }
+  
+
+
+  /* Mobile optimization */
+  @media (max-width: 480px) {
+    .sidebar {
+      width: 80%;
+      min-width: auto;
+    }
+    
+    .sidebar-main-tabs li a,
+    .sidebar-right-tabs li a {
+      font-size: 1rem;
+      padding: 10px 12px;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .sidebar {
+      width: 90%;
+    }
+    
+    .sidebar-content {
+      padding: 15px;
+    }
+  }
+@media (max-width: 768px) {
+    .navbar ul { /* This will hide ALL navigation lists */
+      display: none !important;
+    }
+    
+    .nav-logo {
+      height: 80px; /* Smaller logo for mobile */
+    }
+    
+    /* Keep these other mobile styles from previous */
+    .hamburger {
+      display: block;
+    }
+    
+    header, .container {
+      margin-top: 100px;
+    }
+    
+    /* Add this to hide the entire nav-right section */
+    .nav-right {
+      display: none !important;
+    }
+  }
+  
+  /* Optional: Make sidebar tabs more compact */
+  @media (max-width: 480px) {
+    .sidebar-tabs li a {
+      padding: 12px 15px;
+      font-size: 0.9rem;
+    }
+    
+    .sidebar-main-tabs li a,
+    .sidebar-right-tabs li a {
+      padding: 10px 12px;
+    }
+  }
+  /* Update sidebar styles */
+.sidebar {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    min-width: 280px;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(15px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar.active {
+    left: 0;
+    transform: translateX(0);
+  }
+  
+  .sidebar-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Separate main and right tabs visually */
+  .sidebar-main-tabs,
+  .sidebar-right-tabs {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin: 10px 0;
+  }
+  
+  .sidebar-main-tabs li,
+  .sidebar-right-tabs li {
+    margin: 8px 0;
+  }
+  
+  .sidebar-main-tabs li a,
+  .sidebar-right-tabs li a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 15px;
+    display: block;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .sidebar-main-tabs li a:hover,
+  .sidebar-right-tabs li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(10px);
+  }
+  
+  /* Mobile optimization */
+  @media (max-width: 480px) {
+    .sidebar {
+      width: 80%;
+      min-width: auto;
+    }
+    
+    .sidebar-main-tabs li a,
+    .sidebar-right-tabs li a {
+      font-size: 1rem;
+      padding: 10px 12px;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .sidebar {
+      width: 90%;
+    }
+    
+    .sidebar-content {
+      padding: 15px;
+    }
+  }
+  /* Add these hamburger animation styles */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.sidebar {
+    transition: transform 0.3s ease-out;
+    transform: translateX(-100%);
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+/* Add these z-index values */
+.navbar {
+    z-index: 999; /* Lower than sidebar/hamburger */
+}
+
+.sidebar {
+    z-index: 1000;
+}
+
+.hamburger {
+    z-index: 1001;
+}
+
+/* REPORT CARD CONTAINER */
+.report-card {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 120px auto 2rem;   /* push below fixed navbar */
+  margin-top: 200px;
+  padding: 1rem;
+  background: rgba(255,255,255,0.9);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow-x: hidden;        /* hide any outer overflow */
+}
+
+/* TABLE WRAPPER - this scrolls */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* THE ACTUAL TABLE */
+.table-wrapper table {
+  width: auto;               /* let it overflow naturally */
+  min-width: 700px;          /* set to sum of your column widths */
+  border-collapse: collapse;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.table-wrapper th {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.table-wrapper tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* SEARCH INPUT */
+input[type="search"] {
+  padding: 8px;
+  width: 300px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 1rem auto;
+  display: block;
+}
+
+/* BUTTONS */
+button {
+  padding: 6px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  /* collapse nav into hamburger, etc. */
+  body{
+    margin-top: 15px;
+  }
+  .navbar ul,
+  .nav-right {
+    display: none !important;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+    margin-top: 0;
+  }
+
+  .report-card {
+    margin-top: 100px;
+    padding: 0.5rem;
+  }
+
+  /* make sure wrapper/table still scroll */
+  .table-wrapper {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .table-wrapper table {
+    min-width: 100%;  /* fill the wrapper */
+  }
+}
+.sidebar-main-tabs li a,
+.sidebar-right-tabs li a {
+  display: block;
+  padding: 5px 5px;
+
+  text-decoration: none;
+}

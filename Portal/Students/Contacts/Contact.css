@@ -1,0 +1,405 @@
+* {
+
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+html, body {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  padding: 20px;
+  padding-top: 120px;
+  
+}
+
+
+.navbar {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+
+}
+
+.nav-logo {
+  height: 80px; 
+  width: auto;
+  margin-bottom: 10px; 
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navbar ul li {
+  display: inline-block;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  transform: scale(1.1);
+}
+
+.nav-right {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0; 
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+
+.nav-right li {
+  margin: 0;
+  padding: 0;
+  line-height: 0; 
+}
+
+
+.nav-right li a {
+  display: block; 
+  padding: 0;
+  margin: 0;
+}
+
+.tab-icon {
+  font-size: 1.5rem;
+  color: white;
+  padding: 0 !important; 
+  margin: 0 !important; 
+}
+
+.nav-right li {
+  margin-right: -30px; 
+}
+.tab-text {
+  display: none; 
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+
+.nav-right li:hover .tab-text {
+  display: block; 
+}
+
+.nav-right li a:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.nav-right li:last-child {
+  margin-right: 30px; 
+}
+.sidebar {
+  position: fixed;
+  left: -100%;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  min-width: 280px;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(15px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  overflow-y: auto;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.active {
+  left: 0;
+  transform: translateX(0);
+}
+
+.sidebar-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar-main-tabs,
+.sidebar-right-tabs {
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.sidebar-main-tabs li,
+.sidebar-right-tabs li {
+  margin: 8px 0;
+}
+
+.sidebar-main-tabs li a,
+.sidebar-right-tabs li a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 15px;
+  display: block;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar-main-tabs li a:hover,
+.sidebar-right-tabs li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(10px);
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 560px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-container {
+  flex: 1;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+input, textarea, button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background: #4a90e2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #035ac5;
+}
+
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+    padding-top: 100px;
+  }
+
+  .nav-logo {
+    height: 60px;
+  }
+
+  .container {
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 10px;
+  }
+
+  input, textarea, button {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+
+  button {
+    padding: 14px;
+  }
+  .navbar ul {
+    display: none !important;
+}
+}
+
+.hamburger {
+  display: none;
+  position: fixed;
+  left: 15px;
+  top: 15px;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+.sidebar {
+  position: fixed;
+  left: -100%;
+  top: 0;
+  height: 100%;
+  width: 80%;
+  max-width: 280px;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(15px);
+  transition: 0.3s ease;
+  z-index: 1000;
+  padding-top: 60px;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar-content {
+  padding: 20px;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 15px;
+  display: block;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  
+  .nav-right {
+    display: none;
+  }
+  .navbar ul {
+    display: none !important;
+}
+}
+
+a, button {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  max-height: 200px;
+}
+
+.submit {
+  background: #3262e7;
+  width: 100%;
+}
+
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+    padding-top: 120px;
+  }
+  
+  .nav-logo {
+    height: 80px;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+  .navbar ul li {
+    display: inline-block;
+  }
+  
+
+  .container {
+    width: calc(100% - 30px);
+    padding: 15px;
+    flex-direction: column;
+  }
+
+  .form-container {
+    padding: 15px;
+    background-image: none;
+  }
+}
+.sidebar-main-tabs li a,
+.sidebar-right-tabs li a {
+  display: block;
+  padding: 5px 5px;
+
+  text-decoration: none;
+}

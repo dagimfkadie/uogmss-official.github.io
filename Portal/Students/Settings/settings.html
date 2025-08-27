@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="settings.css">
+  <title>Settings</title>
+  
+</head>
+<body>
+  <nav class="navbar">
+    <img src="UoG_Logo.png" class="nav-logo">
+
+<ul>
+  <li><a href="../Home_Page/Home_stu.html"><span class="nav-icon">🏠</span> Home</a></li>
+  <li><a href="../Report_card/Report_Card.html"><span class="nav-icon">📝</span> Marksheet</a></li>
+  <li><a href="../Contacts/Contact.html"><span class="nav-icon">📩</span> Contact</a></li>
+</ul>
+
+    <ul class="nav-right">
+        <li><a href="../Settings/settings.html" class="tab-icon">⚙️<span class="tab-text">Settings</span></a></li>
+        <li><a href="#" id="logoutBtnSidebar" class="tab-icon">🚪</a></li>
+        <li><a href="../Help/help.html" class="tab-icon">❓<span class="tab-text">Help</span></a></li>
+    </ul>
+</nav>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+
+        <ul class="sidebar-main-tabs">
+            <li><a href="../Home_Page/Home_stu.html">🏠 Home</a></li>
+            <li><a href="../Report_card/Report_Card.html">📝 Marksheet</a></li>
+            <li><a href="../Contacts/Contact.html">📩 Contact</a></li>
+        </ul>
+
+        <ul class="sidebar-right-tabs">
+            <li><a href="../Settings/settings.html">⚙️ Settings</a></li>
+            <li><a href="#" id="logoutBtn" class="tab-icon">🚪 Logout<span class="tab-text">Logout</span></a></li>
+            <li><a href="../Help/help.html">❓ Help</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="hamburger" id="hamburger">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+  <h1>Settings</h1>
+
+  <div class="settings-card">
+
+
+    <section class="settings-section" id="change-password">
+      <h2 class="section-title">Change Password</h2>
+
+      <label for="oldPassword">Old Password</label>
+      <input type="password" id="oldPassword" placeholder="Enter old password" />
+
+      <label for="newPassword">New Password</label>
+      <input type="password" id="newPassword" placeholder="Enter new password" />
+
+      <label for="confirmPassword">Confirm New Password</label>
+      <input type="password" id="confirmPassword" placeholder="Confirm new password" />
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="showPassword" />
+        <label for="showPassword">Show Passwords</label>
+      </div>
+
+      <button id="changePasswordBtn">Update Password</button>
+
+    </section>
+
+  </div>
+  <script type="module" src="settings.js"></script>
+</body>
+</html>

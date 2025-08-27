@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Change Password</title>
+  <link rel="stylesheet" href="changeP.css">
+  <script type="module" src="changeP.js" defer></script>
+</head>
+<body>
+  <div class="card">
+    <h2>Change Your Password</h2>
+
+    <form id="changeForm">
+      <label>
+        New Password
+        <input
+          type="password"
+          id="newPassword"
+          placeholder="New password (6–12 chars)"
+          minlength="6"
+          maxlength="12"
+          required
+        />
+      </label>
+
+      <label>
+        Confirm Password
+        <input
+          type="password"
+          id="confirmPassword"
+          placeholder="Re-enter new password"
+          minlength="6"
+          maxlength="12"
+          required
+        />
+      </label>
+
+      <div class="show-pass">
+        <input type="checkbox" id="showPassword" />
+        <label for="showPassword">Show Password</label>
+      </div>
+      
+
+      <button type="submit" id="submitBtn" disabled>Submit</button>
+    </form>
+  </div>
+</body>
+</html>

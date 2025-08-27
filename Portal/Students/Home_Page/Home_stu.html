@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Home</title>
+    <link rel="stylesheet" href="Home_stu.css">
+
+</head>
+<body>
+<nav class="navbar">
+    <img src="UoG_Logo.png" class="nav-logo">
+
+<ul>
+  <li><a href="../Home_Page/Home_stu.html"><span class="nav-icon">🏠</span> Home</a></li>
+  <li><a href="../Report_card/Report_Card.html"><span class="nav-icon">📝</span> Report Card</a></li>
+  <li><a href="../Contacts/Contact.html"><span class="nav-icon">📩</span> Contact</a></li>
+</ul>
+
+    <ul class="nav-right">
+        <li><a href="../Settings/settings.html" class="tab-icon">⚙️<span class="tab-text">Settings</span></a></li>
+        <li><a href="#" id="logoutBtn" class="tab-icon">🚪<span class="tab-text">Logout</span></a></li>
+        <li><a href="../Help/help.html" class="tab-icon">❓<span class="tab-text">Help</span></a></li>
+    </ul>
+</nav>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+
+        <ul class="sidebar-main-tabs">
+            <li><a href="../Home_Page/Home_stu.html">🏠 Home</a></li>
+            <li><a href="../Report_card/Report_Card.html">📝 Report Card</a></li>
+            <li><a href="../Contacts/Contact.html">📩 Contact</a></li>
+        </ul>
+
+        <ul class="sidebar-right-tabs">
+            <li><a href="../Settings/settings.html">⚙️ Settings</a></li>
+            <li><a href="#" id="logoutBtn" class="tab-icon">🚪 Logout<span class="tab-text">Logout</span></a></li>
+            <li><a href="../Help/help.html">❓ Help</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="hamburger" id="hamburger">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+
+    <header>
+        <div>
+            <h1 id="welcomeMessage">Welcome!</h1>
+    
+            
+        </div>
+        <div class="welcome-container">
+            <div class="welcome-card">
+                <div class="welcome-header">
+                    📚✨ Welcome to UOG MSS PORTAL! ✨🎓
+                </div>
+                
+                <div class="welcome-content">
+                    <div class="welcome-students">
+                        <h3>Dear Students,</h3>
+                        <p>Your learning journey begins here! Get ready to:</p>
+                        <ul>
+                            <li>🚀 Explore new subjects and ideas</li>
+                            <li>💻 Access interactive learning materials</li>
+                            <li>🎯 Track your progress and achievements</li>
+                        </ul>
+                    </div>
+                    <div class="welcome-footer">
+                        <p>Let's make this academic year one of discovery, growth, and success!</p>
+                        <p>🌟 <em>"Education is the most powerful weapon which you can use to change the world."</em> - Nelson Mandela</p>
+                    </div>
+                </div>
+        </div>
+        </div>
+    </header>
+
+    <section class="container">
+          
+
+    <div class="resultcard">
+      <h2>📄 Report Card</h2>
+      <table>
+        <tr>
+          <th>Subject</th>
+          <th>Grade</th>
+          <th>Remarks</th>
+        </tr>
+        <tr>
+          <td>Math</td>
+          <td>A</td>
+          <td>Excellent</td>
+        </tr>
+        <tr>
+          <td>Science</td>
+          <td>B</td>
+          <td>Good</td>
+        </tr>
+      </table>
+    </div>
+    </section>
+    <section class="container">
+    <div class="contactpage">
+      <h2>Message Your Teacher</h2>
+      <p>Have a question? Ask below</p>
+   
+    </div>
+      
+    </section>
+
+    <script type="module" src="Home_stu.js"></script>
+    <script>
+        document.querySelector('.resultcard').addEventListener('click', function() {
+            window.location.href = '../studentsmarksheet/html.html';
+        });
+        document.querySelector('.contactpage').addEventListener('click', function() {
+            window.location.href = "../contact us page/Untitled-1.html";
+        });
+    </script>
+    
+</body>
+</html>
