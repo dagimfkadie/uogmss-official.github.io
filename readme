@@ -1,2 +1,33 @@
-it is a website made by me and my friends to uog model secondary school,gondar, Ethiopia.
-if you have another any pull requests  we will work on these requests please announce us
+# UoG Model Secondary School - Official Web Portal & Results System
+
+An all-in-one official website and student result checker portal designed and developed for University of Gondar Model Secondary School (UoGMSS).
+
+Features
+
+Official School Homepage: Displays school announcements, news, history, and contact details.
+Student Result Portal: Allows students to view their academic performance and report cards efficiently.
+User Authentication: Secure login for students and staff to access dashboard features.
+Responsive Design: Optimized for seamless viewing on mobile phones, tablets, and desktop devices.
+
+
+Tech Stack
+
+Frontend: HTML5, CSS3, JavaScript
+Backend & Auth: Firebase (Authentication & Database)
+Styling/UI: Custom CSS / Flexbox / Grid
+
+--- 
+
+Getting Started
+
+Follow these instructions to run the project locally on your machine.
+
+Prerequisites
+
+You only need a modern web browser (Google Chrome, Firefox, Edge, or Safari).
+
+Installation
+
+1. Clone the repository
+   ```bash
+   git clone [https://github.com/dagimfkadie/uogmss-official.github.io.git](https://github.com/dagimfkadie/uogmss-official.github.io.git)
